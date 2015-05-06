@@ -1,10 +1,9 @@
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:latest
+
 # Install Python.
-RUN apt-get update \
-	&& apt-get install -y python \
-	# Remove package lists to free up space
-	&& rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y python && rm -rf /var/lib/apt/lists/*
 
 COPY . /app
 
+# Start blink app
 CMD ["python", "/app/blink.py"]
