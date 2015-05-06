@@ -9,5 +9,5 @@ Enhanced to support deployment by [resin.io](https://resin.io/)
 
 To run the program without resin.io, just do:
 
-  sudo python blink.py
+    sudo python blink.py
   
