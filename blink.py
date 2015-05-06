@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO  
-import time  
+import time
+import sys  
 # blinking function  
 def blink(pin):  
         GPIO.output(pin,GPIO.HIGH)  
@@ -11,7 +12,10 @@ def blink(pin):
 GPIO.setmode(GPIO.BOARD)  
 # set up GPIO output channel  
 GPIO.setup(11, GPIO.OUT)  
-# blink GPIO17 50 times  
-for i in range(0,50):  
-        blink(11)  
-GPIO.cleanup()
+# blinks forever (until Ctrl+C)
+while True:
+        try:
+                blink(11)
+        except KeyboardInterrupt:
+                print "exit..."
+                GPIO.cleanup()
