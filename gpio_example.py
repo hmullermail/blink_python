@@ -23,30 +23,29 @@ nopts = 10
 
 # Set GPIO mode: GPIO.BCM or GPIO.BOARD
 
-while True:
-
-  lapsetime_1=time.time()
-  while inter<nopts:
-      GPIO.output(tpin, False)
-      time.sleep(0.2)
-      GPIO.output(tpin, True)
-      starttime=time.time()
-      endtime=time.time()
-      while (GPIO.input(mpin) == GPIO.LOW):
-          endtime=time.time()
-      measureresistance=endtime-starttime
-      res=(measureresistance/cap)*adj
-      inter=inter+1
-      adder=adder+res
+lapsetime_1=time.time()
+while inter<nopts:
+  GPIO.output(tpin, False)
+  time.sleep(0.2)
+  GPIO.output(tpin, True)
+  starttime=time.time()
+  endtime=time.time()
+  while (GPIO.input(mpin) == GPIO.LOW):
+    endtime=time.time()
+  measureresistance=endtime-starttime
+  res=(measureresistance/cap)*adj
+  inter=inter+1
+  adder=adder+res
   
-  lapsetime_2=time.time()
-  timelapse=lapsetime_2-lapsetime_1
-  print('\n')
-  print(adder/nopts)
-  print('\n')
+lapsetime_2=time.time()
+timelapse=lapsetime_2-lapsetime_1
+print('\n')
+print(adder/nopts)
+print('\n')
+
 #  print('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
 #  print('\n')
 #  print('Total elapsed time: '+timelapse+' seconds.')
 
 # Reset all gpio pin
-GPIO.cleanup()
+
