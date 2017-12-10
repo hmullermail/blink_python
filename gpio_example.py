@@ -19,14 +19,14 @@ adj = 2.130620985
 
 inter = 0
 adder = 0
-nopts = 1
+nopts = 3
 
 # Set GPIO mode: GPIO.BCM or GPIO.BOARD
 
 lapsetime_1=time.time()
 while inter<nopts:
   GPIO.output(tpin, False)
-  time.sleep(1)
+  time.sleep(3)
   GPIO.output(tpin, True)
   starttime=time.time()
   endtime=time.time()
@@ -39,13 +39,10 @@ while inter<nopts:
   
 lapsetime_2=time.time()
 timelapse=lapsetime_2-lapsetime_1
-print('\n')
+
 print(adder/nopts)
 print('\n')
-
-#  print('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
-#  print('\n')
-#  print('Total elapsed time: '+timelapse+' seconds.')
+print(timelapse)
 
 # Reset all gpio pin
 
