@@ -19,15 +19,16 @@ adj = 2.130620985
 
 inter = 0
 adder = 0
-nopts = 2
+nopts = 1
 
 # Set GPIO mode: GPIO.BCM or GPIO.BOARD
 
 lapsetime_1=time.time()
 while inter<nopts:
   GPIO.output(tpin, False)
-  time.sleep(3)
+  time.sleep(1)
   GPIO.output(tpin, True)
+  time.sleep(1)
   starttime=time.time()
   endtime=time.time()
   while (GPIO.input(mpin) == GPIO.LOW):
@@ -36,6 +37,7 @@ while inter<nopts:
   res=(measureresistance/cap)*adj
   inter=inter+1
   adder=adder+res
+  time.sleep(1)
   
 lapsetime_2=time.time()
 timelapse=lapsetime_2-lapsetime_1
