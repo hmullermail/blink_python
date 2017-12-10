@@ -19,14 +19,14 @@ adj = 2.130620985
 
 inter = 0
 adder = 0
-nopts = 3
+nopts = 2
 
 # Set GPIO mode: GPIO.BCM or GPIO.BOARD
 
 lapsetime_1=time.time()
 while inter<nopts:
   GPIO.output(tpin, False)
-  time.sleep(2)
+  time.sleep(3)
   GPIO.output(tpin, True)
   starttime=time.time()
   endtime=time.time()
@@ -42,7 +42,6 @@ timelapse=lapsetime_2-lapsetime_1
 
 print(inter)
 print(adder/nopts)
-print('\n')
 print(timelapse)
 
 # Reset all gpio pin
