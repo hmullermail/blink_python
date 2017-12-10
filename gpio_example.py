@@ -41,10 +41,12 @@ while True:
   
   lapsetime_2=time.time()
   timelapse=lapsetime_2-lapsetime_1
-  
-  println(adder/nopts)
-  println('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
-  println('Total elapsed time: '+timelapse+' seconds.')
+  print('\n')
+  print(adder/nopts)
+  print('\n')
+  print('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
+  print('\n')
+  print('Total elapsed time: '+timelapse+' seconds.')
 
 # Reset all gpio pin
 GPIO.cleanup()
