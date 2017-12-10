@@ -36,7 +36,7 @@ while True:
           endtime=time.time()
       measureresistance=endtime-starttime
       res=(measureresistance/cap)*adj
-      inter++
+      inter=inter+1
       adder=adder+res
   
   lapsetime_2=time.time()
