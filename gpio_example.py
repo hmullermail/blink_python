@@ -44,9 +44,9 @@ while True:
   print('\n')
   print(adder/nopts)
   print('\n')
-  print('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
-  print('\n')
-  print('Total elapsed time: '+timelapse+' seconds.')
+#  print('For '+nopts+' measurements, darkness sensor reading is '+adder/nopts+'.')
+#  print('\n')
+#  print('Total elapsed time: '+timelapse+' seconds.')
 
 # Reset all gpio pin
 GPIO.cleanup()
