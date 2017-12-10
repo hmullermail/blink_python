@@ -26,7 +26,7 @@ nopts = 3
 lapsetime_1=time.time()
 while inter<nopts:
   GPIO.output(tpin, False)
-  time.sleep(3)
+  time.sleep(2)
   GPIO.output(tpin, True)
   starttime=time.time()
   endtime=time.time()
@@ -40,9 +40,10 @@ while inter<nopts:
 lapsetime_2=time.time()
 timelapse=lapsetime_2-lapsetime_1
 
+print(inter)
 print(adder/nopts)
 print('\n')
 print(timelapse)
 
 # Reset all gpio pin
-
+GPIO.cleanup()
